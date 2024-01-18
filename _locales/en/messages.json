@@ -1,0 +1,30 @@
+{
+  "extDescription": {
+    "message": "GGMarket",
+    "description": "Short description of the extension to be displayed in the UI and on AMO"
+  },
+  "buttonDescription": {
+    "message": "GGMarket",
+    "description": "Tooltip of the browser toolbar icon."
+  },
+  "hoyoverse": {
+    "message": "GGMarket needs your permission to copy necessary cookies from hoyoverse.com",
+    "description": "Copy necessary cookies from hoyoverse.com"
+  },
+  "steam": {
+    "message": "GGMarket needs your permission to copy necessary cookies from steamcommunity.com",
+    "description": "Copy necessary cookies from steamcommunity.com"
+  },
+  "roblox": {
+    "message": "GGMarket needs your permission to copy necessary cookies from roblox.com",
+    "description": "Copy necessary cookies from roblox.com"
+  },
+  "permission": {
+    "message": "Yes, do it",
+    "description": "Give permission to get cookies"
+  },
+  "noauth": {
+    "message": "Please, log in to game service.",
+    "description": "Remind user of logging in to game service"
+  }
+}

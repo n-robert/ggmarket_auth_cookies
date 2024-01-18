@@ -1,0 +1,30 @@
+{
+  "extDescription": {
+    "message": "GGMarket",
+    "description": "Короткое описание плагина для UI и AMO"
+  },
+  "buttonDescription": {
+    "message": "GGMarket",
+    "description": "Подсказки для иконки кнопки"
+  },
+  "hoyoverse": {
+    "message": "GGMarket просит ваше разрешение копировать необходимые куки с hoyoverse.com",
+    "description": "Копировать необходимые куки с hoyoverse.com"
+  },
+  "steam": {
+    "message": "GGMarket просит ваше разрешение копировать необходимые куки с steamcommunity.com",
+    "description": "Копировать необходимые куки с steamcommunity.com"
+  },
+  "roblox": {
+    "message": "GGMarket просит ваше разрешение копировать необходимые куки с roblox.com",
+    "description": "Копировать необходимые куки с roblox.com"
+  },
+  "permission": {
+    "message": "ОК, разрешаю",
+    "description": "Дать разрешение на копирование куки"
+  },
+  "noauth": {
+    "message": "Вам необходимо войти в аккаунт на игровом сервисе.",
+    "description": "Напомнить юзера о необходимости войти в аккаунт на игровом сервисе"
+  }
+}

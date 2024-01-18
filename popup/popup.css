@@ -1,0 +1,19 @@
+div#popup-content {
+  width: 200px;
+}
+
+button {
+  width: 100%;
+  margin: 3% auto;
+  border: 1px solid grey;
+  padding: 4px;
+  background: none;
+  text-align: center;
+  font-size: 0.75em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: lightgrey;
+}
