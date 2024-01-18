@@ -13,9 +13,10 @@ browser.tabs.query(query, tabs => {
         const
             pathname = new URL(tabs[0].url).pathname,
             regex = /product\/(\w+)\/create/g,
-            key = regex.exec(pathname)[1];
+            result = regex.exec(pathname),
+            key = result ? result[1] : undefined;
 
-        if (urls[key] === undefined) {
+        if (key === undefined || urls[key] === undefined) {
             window.close();
         } else {
             document.getElementById("popup-content").innerText = browser.i18n.getMessage(key);
