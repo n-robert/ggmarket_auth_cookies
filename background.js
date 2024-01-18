@@ -23,7 +23,7 @@ async function saveCookies(cookies, names) {
         code = 'localStorage.setItem("ggmarket_auth_cookies", ' + JSON.stringify(body) + ')';
 
     if (body.length < names.length) {
-        browser.tabs.executeScript({file: 'content.js'});
+        browser.tabs.executeScript({file: 'noauth.js'});
         process.exit(0);
     }
 
