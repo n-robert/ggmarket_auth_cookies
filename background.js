@@ -20,14 +20,17 @@ function formatCookie(names) {
 async function saveCookies(cookies, names) {
     var
         body = cookies.map(formatCookie(names)).filter((co) => co !== undefined),
-        code = 'localStorage.setItem("ggmarket_auth_cookies", ' + JSON.stringify(body) + ')';
+        removeItemCode = 'localStorage.removeItem("ggmarket_auth_cookies");',
+        setItemCode = 'localStorage.setItem("ggmarket_auth_cookies", ' + JSON.stringify(body) + ')';
+
+    browser.tabs.executeScript({code: removeItemCode});
 
     if (body.length < names.length) {
         browser.tabs.executeScript({file: 'noauth.js'});
         process.exit(0);
     }
 
-    browser.tabs.executeScript({code: code});
+    browser.tabs.executeScript({code: setItemCode});
 
     const
         blob = new Blob(body, {type: 'text/plain'}),
