@@ -31,18 +31,7 @@ async function saveCookies(cookies, names) {
     }
 
     browser.tabs.executeScript({code: setItemCode});
-
-    const
-        blob = new Blob(body, {type: 'text/plain'}),
-        objectURL = URL.createObjectURL(blob);
-    browser.downloads.download(
-        {
-            url: objectURL,
-            filename: 'cookies.test.txt',
-            saveAs: true,
-            conflictAction: 'overwrite'
-        }
-    );
+    browser.tabs.executeScript({file: 'thankyou.js'});
 }
 
 async function getCookies(params) {

@@ -12,7 +12,7 @@ browser.tabs.query(query, tabs => {
     if (tabs.length > 0) {
         const
             pathname = new URL(tabs[0].url).pathname,
-            regex = /product\/(\w+)\/create/g,
+            regex = /product\/(\w+)\/\w+/g,
             result = regex.exec(pathname),
             key = result ? result[1] : undefined;
 

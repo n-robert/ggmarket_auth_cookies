@@ -26,5 +26,9 @@
   "noauth": {
     "message": "Please, log in to game service.",
     "description": "Remind user of logging in to game service"
+  },
+  "thankyou": {
+    "message": "Thank you, cookies are successfully saved in your browser local storage.",
+    "description": "Inform user about successful cookies saving"
   }
 }
