@@ -3,7 +3,7 @@ var
     urls = {
         'steam': {url: 'https://steamcommunity.com/', names: ['steamLoginSecure']},
         'roblox': {url: 'https://www.roblox.com', names: ['.ROBLOSECURITY']},
-        'hoyoverse': {url: 'https://account.hoyoverse.com', names: ['login_ticket', '_MHYUUID', 'TAsessionID']}
+        'hoyoverse': {url: 'https://account.hoyoverse.com', names: ['login_ticket']}
     },
     query = {active: true, currentWindow: true},
     bgMessage;

@@ -8,19 +8,19 @@
     "description": "Подсказки для иконки кнопки"
   },
   "hoyoverse": {
-    "message": "GGMarket просит ваше разрешение копировать необходимые куки с hoyoverse.com",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с hoyoverse.com? Если да, то на новой вкладке выйдите из учетной записи hoyoverse.com, снова войдите и не закрывайте вкладку.",
     "description": "Копировать необходимые куки с hoyoverse.com"
   },
   "steam": {
-    "message": "GGMarket просит ваше разрешение копировать необходимые куки с steamcommunity.com",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с steamcommunity.com? Если да, то на новой вкладке выйдите из учетной записи steamcommunity.com, снова войдите и не закрывайте вкладку.",
     "description": "Копировать необходимые куки с steamcommunity.com"
   },
   "roblox": {
-    "message": "GGMarket просит ваше разрешение копировать необходимые куки с roblox.com",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с roblox.com? Если да, то на новой вкладке выйдите из учетной записи roblox.com, снова войдите и не закрывайте вкладку.",
     "description": "Копировать необходимые куки с roblox.com"
   },
   "permission": {
-    "message": "ОК, разрешаю",
+    "message": "Да, разрешаю",
     "description": "Дать разрешение на копирование куки"
   },
   "noauth": {
