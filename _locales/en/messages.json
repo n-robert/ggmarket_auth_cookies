@@ -8,15 +8,15 @@
     "description": "Tooltip of the browser toolbar icon."
   },
   "hoyoverse": {
-    "message": "Do you do give permission to GGMarket to copy essential cookies from hoyoverse.com? If yes, please log out of hoyoverse.com in a new tab, log in again and don't close the tab.",
+    "message": "Do you give GGMarket permission to copy essential cookies from hoyoverse.com? If yes, please log out of hoyoverse.com in a new tab, log in again and don't close the tab.",
     "description": "Copy necessary cookies from hoyoverse.com"
   },
   "steam": {
-    "message": "Do you do give permission to GGMarket to copy essential cookies from steamcommunity.com? If yes, please log out of steamcommunity.com in a new tab, log in again and don't close the tab.",
+    "message": "Do you give GGMarket permission to copy essential cookies from steamcommunity.com? If yes, please log out of steamcommunity.com in a new tab, log in again and don't close the tab.",
     "description": "Copy necessary cookies from steamcommunity.com"
   },
   "roblox": {
-    "message": "Do you do give permission to GGMarket to copy essential cookies from roblox.com? If yes, please log out of roblox.com in a new tab, log in again and don't close the tab.",
+    "message": "Do you give GGMarket permission to copy essential cookies from roblox.com? If yes, please log out of roblox.com in a new tab, log in again and don't close the tab.",
     "description": "Copy necessary cookies from roblox.com"
   },
   "permission": {
