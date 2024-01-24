@@ -13,18 +13,6 @@
       "background.js"
     ]
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://ggmarket.gg/*",
-        "http://176.57.220.167/*",
-        "http://localhost/*"
-      ],
-      "js": [
-        "content.js"
-      ]
-    }
-  ],
   "browser_action": {
     "default_title": "__MSG_buttonDescription__",
     "default_icon": {
@@ -46,6 +34,7 @@
     "*://*.steamcommunity.com/",
     "*://*.steampowered.com/",
     "*://*.hoyoverse.com/",
+    "*://*.hoyolab.com/",
     "*://*.roblox.com/",
     "*://*.lesta.ru/",
     "*://*.tanki.su/",
