@@ -7,17 +7,29 @@
     "message": "GGMarket",
     "description": "Tooltip of the browser toolbar icon."
   },
-  "hoyoverse": {
-    "message": "Do you give GGMarket permission to copy essential cookies from hoyoverse.com? If yes, please log out of hoyoverse.com in a new tab, log in again and don't close the tab.",
-    "description": "Copy necessary cookies from hoyoverse.com"
+  "hoyoverseLogin": {
+    "message": "Please open a new tab, log in to account.hoyoverse.com, then log in to hoyolab.com. Don't close the tab. Go back and press the GGMarket plugin icon.",
+    "description": "Instructions to log in to account.hoyoverse.com"
   },
-  "steam": {
-    "message": "Do you give GGMarket permission to copy essential cookies from steamcommunity.com? If yes, please log out of steamcommunity.com in a new tab, log in again and don't close the tab.",
-    "description": "Copy necessary cookies from steamcommunity.com"
+  "hoyoversePermission": {
+    "message": "Do you give GGMarket permission to copy essential cookies from account.hoyoverse.com?",
+    "description": "Permission to copy essential cookies from account.hoyoverse.com"
   },
-  "roblox": {
-    "message": "Do you give GGMarket permission to copy essential cookies from roblox.com? If yes, please log out of roblox.com in a new tab, log in again and don't close the tab.",
-    "description": "Copy necessary cookies from roblox.com"
+  "steamLogin": {
+    "message": "Please open a new tab, log in to steamcommunity.com, then log in to store.steampowered.com. Don't close the tab. Go back and press the GGMarket plugin icon.",
+    "description": "Instructions to log in to steamcommunity.com and store.steampowered.com"
+  },
+  "steamPermission": {
+    "message": "Do you give GGMarket permission to copy essential cookies from steamcommunity.com?",
+    "description": "Permission to copy essential cookies from steamcommunity.com and store.steampowered.com"
+  },
+  "robloxLogin": {
+    "message": "Please open a new tab, log in to roblox.com. Don't close the tab. Go back and press the GGMarket plugin icon.",
+    "description": "Instructions to log in to roblox.com"
+  },
+  "robloxPermission": {
+    "message": "Do you give GGMarket permission to copy essential cookies from roblox.com?",
+    "description": "Permission to copy essential cookies from roblox.com"
   },
   "permission": {
     "message": "Yes, I do",

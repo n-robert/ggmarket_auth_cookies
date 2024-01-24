@@ -1,9 +1,21 @@
 var
     browser = browser || chrome,
     urls = {
-        'steam': {url: 'https://steamcommunity.com/', names: ['steamLoginSecure']},
-        'roblox': {url: 'https://www.roblox.com', names: ['.ROBLOSECURITY']},
-        'hoyoverse': {url: 'https://account.hoyoverse.com', names: ['login_ticket']}
+        'steam': {
+            items: [
+                {domain: 'steamcommunity.com', names: ['steamLoginSecure']},
+                {domain: 'store.steampowered.com', names: ['steamLoginSecure']}
+            ]
+        },
+        'roblox': {
+            items: [{domain: '.roblox.com', names: ['.ROBLOSECURITY']}]
+        },
+        'hoyoverse': {
+            items: [
+                {domain: '.hoyoverse.com', names: ['login_ticket']},
+                {domain: '.hoyolab.com', names: ['cookie_token_v2', 'ltoken_v2', 'account_id_v2']}
+            ]
+        }
     },
     query = {active: true, currentWindow: true},
     bgMessage;
@@ -19,11 +31,11 @@ browser.tabs.query(query, tabs => {
         if (key === undefined || urls[key] === undefined) {
             window.close();
         } else {
-            document.getElementById("popup-content").innerText = browser.i18n.getMessage(key);
-            document.getElementById("permission").innerText = browser.i18n.getMessage('permission');
+            document.getElementById('popup-content').innerText = browser.i18n.getMessage(key + 'Permission');
+            document.getElementById('permission').innerText = browser.i18n.getMessage('permission');
 
             bgMessage = urls[key];
-            document.getElementById("permission").addEventListener("click", () => {
+            document.getElementById('permission').addEventListener('click', () => {
                 browser.runtime.sendMessage(bgMessage);
                 window.close();
             });

@@ -1,31 +1,45 @@
 var browser = browser || chrome;
 
-function formatCookie(names) {
+function formatCookie(items) {
     return function (co) {
-        if (names.indexOf(co.name) !== -1) {
-            return JSON.stringify({
-                domain: co.domain,
-                name: co.name,
-                value: co.value
-            });
+        for (const item of items) {
+            if (
+                item.domain === co.domain
+                && item.names.indexOf(co.name) !== -1
+            ) {
+                return JSON.stringify({
+                    domain: co.domain,
+                    name: co.name,
+                    value: co.value
+                });
+            }
         }
     }
 }
 
-/**
- * Save all cookies from a given store.
- * @param {browser.cookies.Cookie[]} cookies Cookies from the store
- * @param names Necessary cookie names
- */
-async function saveCookies(cookies, names) {
+function getCookieCount(items) {
+    let l = 0;
+
+    for (const item of items) {
+        l += item.names.length;
+    }
+
+    return l;
+}
+
+async function saveCookies(cookies, items) {
     var
-        body = cookies.map(formatCookie(names)).filter((co) => co !== undefined),
+        value = cookies.map(
+            formatCookie(items)
+        ).filter(
+            (co) => co !== undefined
+        ),
         removeItemCode = 'localStorage.removeItem("ggmarket_auth_cookies");',
-        setItemCode = 'localStorage.setItem("ggmarket_auth_cookies", ' + JSON.stringify(body) + ')';
+        setItemCode = 'localStorage.setItem("ggmarket_auth_cookies", ' + JSON.stringify(value) + ')';
 
     browser.tabs.executeScript({code: removeItemCode});
 
-    if (body.length < names.length) {
+    if (value.length < getCookieCount(items)) {
         browser.tabs.executeScript({file: 'noauth.js'});
         process.exit(0);
     }
@@ -34,17 +48,17 @@ async function saveCookies(cookies, names) {
     browser.tabs.executeScript({file: 'thankyou.js'});
 }
 
-async function getCookies(params) {
+async function getCookies(items) {
     cookies = await browser.cookies.getAll(
-        {url: params.url},
-        cookies => saveCookies(cookies, params.names)
+        {},
+        cookies => saveCookies(cookies, items)
     );
 }
 
 function handleClick(bgMessage = {}) {
-    if (bgMessage.url && bgMessage.names) {
+    if (bgMessage.items) {
         browser.cookies.getAllCookieStores(() =>
-            getCookies(bgMessage)
+            getCookies(bgMessage.items)
         );
     }
 }

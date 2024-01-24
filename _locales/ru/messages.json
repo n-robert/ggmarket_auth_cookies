@@ -7,17 +7,29 @@
     "message": "GGMarket",
     "description": "Подсказки для иконки кнопки"
   },
-  "hoyoverse": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с hoyoverse.com? Если да, то на новой вкладке выйдите из учетной записи hoyoverse.com, снова войдите и не закрывайте вкладку.",
-    "description": "Копировать необходимые куки с hoyoverse.com"
+  "hoyoverseLogin": {
+    "message": "Пожалуйста, на новой вкладке залогиньтесь на account.hoyoverse.com, затем на hoyolab.com/. Не закрывайте вкладку. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "description": "Инструкции для входа на account.hoyoverse.com"
   },
-  "steam": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с steamcommunity.com? Если да, то на новой вкладке выйдите из учетной записи steamcommunity.com, снова войдите и не закрывайте вкладку.",
-    "description": "Копировать необходимые куки с steamcommunity.com"
+  "hoyoversePermission": {
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с account.hoyoverse.com?",
+    "description": "Разрешение на копирование необходимые куки с account.hoyoverse.com"
   },
-  "roblox": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с roblox.com? Если да, то на новой вкладке выйдите из учетной записи roblox.com, снова войдите и не закрывайте вкладку.",
-    "description": "Копировать необходимые куки с roblox.com"
+  "steamLogin": {
+    "message": "Пожалуйста, на новой вкладке залогиньтесь сначала на steamcommunity.com, затем на store.steampowered.com. Не закрывайте вкладку. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "description": "Инструкции для входа на steamcommunity.com и store.steampowered.com"
+  },
+  "steamPermission": {
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с steamcommunity.com?",
+    "description": "Разрешение на копирование необходимые куки с steamcommunity.com and store.steampowered.com"
+  },
+  "robloxLogin": {
+    "message": "Пожалуйста, на новой вкладке залогиньтесь на roblox.com. Не закрывайте вкладку. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "description": "Инструкции для входа на roblox.com"
+  },
+  "robloxPermission": {
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с roblox.com?",
+    "description": "Разрешение на копирование необходимые куки с roblox.com"
   },
   "permission": {
     "message": "Да, разрешаю",
