@@ -8,15 +8,15 @@
     "description": "Подсказки для иконки кнопки"
   },
   "hoyoverseLogin": {
-    "message": "Пожалуйста, на новой вкладке залогиньтесь на account.hoyoverse.com, затем на hoyolab.com/. Не закрывайте вкладку. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "message": "Пожалуйста, залогиньтесь сначала на account.hoyoverse.com, затем на hoyolab.com, каждый раз на новой вкладке. Не закрывайте вкладки. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
     "description": "Инструкции для входа на account.hoyoverse.com"
   },
   "hoyoversePermission": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с account.hoyoverse.com?",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с account.hoyoverse.com и hoyolab.com?",
     "description": "Разрешение на копирование необходимые куки с account.hoyoverse.com"
   },
   "steamLogin": {
-    "message": "Пожалуйста, на новой вкладке залогиньтесь сначала на steamcommunity.com, затем на store.steampowered.com. Не закрывайте вкладку. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "message": "Пожалуйста, залогиньтесь сначала на steamcommunity.com, затем на store.steampowered.com, каждый раз на новой вкладке. Не закрывайте вкладки. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
     "description": "Инструкции для входа на steamcommunity.com и store.steampowered.com"
   },
   "steamPermission": {

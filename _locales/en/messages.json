@@ -8,23 +8,23 @@
     "description": "Tooltip of the browser toolbar icon."
   },
   "hoyoverseLogin": {
-    "message": "Please open a new tab, log in to account.hoyoverse.com, then log in to hoyolab.com. Don't close the tab. Go back and press the GGMarket plugin icon.",
+    "message": "Please log in to account.hoyoverse.com, then to hoyolab.com, each site in a new tab. Don't close the tabs. Go back and press the GGMarket plugin icon.",
     "description": "Instructions to log in to account.hoyoverse.com"
   },
   "hoyoversePermission": {
-    "message": "Do you give GGMarket permission to copy essential cookies from account.hoyoverse.com?",
+    "message": "Do you give GGMarket permission to copy essential cookies from account.hoyoverse.com and hoyolab.com?",
     "description": "Permission to copy essential cookies from account.hoyoverse.com"
   },
   "steamLogin": {
-    "message": "Please open a new tab, log in to steamcommunity.com, then log in to store.steampowered.com. Don't close the tab. Go back and press the GGMarket plugin icon.",
+    "message": "Please log in to steamcommunity.com, then to store.steampowered.com, each site in a new tab. Don't close the tabs. Go back and press the GGMarket plugin icon.",
     "description": "Instructions to log in to steamcommunity.com and store.steampowered.com"
   },
   "steamPermission": {
-    "message": "Do you give GGMarket permission to copy essential cookies from steamcommunity.com?",
+    "message": "Do you give GGMarket permission to copy essential cookies from steamcommunity.com and store.steampowered.com?",
     "description": "Permission to copy essential cookies from steamcommunity.com and store.steampowered.com"
   },
   "robloxLogin": {
-    "message": "Please open a new tab, log in to roblox.com. Don't close the tab. Go back and press the GGMarket plugin icon.",
+    "message": "Please log in to roblox.com in a new tab. Don't close the tab. Go back and press the GGMarket plugin icon.",
     "description": "Instructions to log in to roblox.com"
   },
   "robloxPermission": {
