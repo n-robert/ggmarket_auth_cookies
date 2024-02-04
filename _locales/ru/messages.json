@@ -8,27 +8,27 @@
     "description": "Подсказки для иконки кнопки"
   },
   "hoyoverseLogin": {
-    "message": "Пожалуйста, залогиньтесь сначала на account.hoyoverse.com, затем на hoyolab.com, каждый раз на новой вкладке. Не закрывайте вкладки. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "message": "Пожалуйста, залогиньтесь сначала на hoyolab.com, затем на account.hoyoverse.com, каждый раз на новой вкладке.\nНе закрывайте вкладки.\nВернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
     "description": "Инструкции для входа на account.hoyoverse.com"
   },
   "hoyoversePermission": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с account.hoyoverse.com и hoyolab.com?",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с account.hoyoverse.com и hoyolab.com?\nПри необходимости плагин перенаправит вас сначала на hoyolab.com, затем на account.hoyoverse.com. После успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
     "description": "Разрешение на копирование необходимые куки с account.hoyoverse.com"
   },
   "steamLogin": {
-    "message": "Пожалуйста, залогиньтесь сначала на steamcommunity.com, затем на store.steampowered.com, каждый раз на новой вкладке. Не закрывайте вкладки. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "message": "Пожалуйста, залогиньтесь сначала на steamcommunity.com, затем на store.steampowered.com, каждый раз на новой вкладке.\nНе закрывайте вкладки.\nВернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
     "description": "Инструкции для входа на steamcommunity.com и store.steampowered.com"
   },
   "steamPermission": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с steamcommunity.com?",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с steamcommunity.com и store.steampowered.com?\nПри необходимости плагин перенаправит вас сначала на steamcommunity.com, затем на store.steampowered.com для аутентификации. После успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
     "description": "Разрешение на копирование необходимые куки с steamcommunity.com and store.steampowered.com"
   },
   "robloxLogin": {
-    "message": "Пожалуйста, на новой вкладке залогиньтесь на roblox.com. Не закрывайте вкладку. Вернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
+    "message": "Пожалуйста, на новой вкладке залогиньтесь на roblox.com.\nНе закрывайте вкладку.\nВернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
     "description": "Инструкции для входа на roblox.com"
   },
   "robloxPermission": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с roblox.com?",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с roblox.com?\nПри необходимости плагин перенаправит вас на roblox.com. После успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
     "description": "Разрешение на копирование необходимые куки с roblox.com"
   },
   "permission": {

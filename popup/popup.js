@@ -1,5 +1,4 @@
-var
-    browser = browser || chrome,
+var browser = browser || chrome,
     urls = {
         'steam': {
             items: [
@@ -8,7 +7,9 @@ var
             ]
         },
         'roblox': {
-            items: [{domain: '.roblox.com', names: ['.ROBLOSECURITY']}]
+            items: [
+                {domain: '.roblox.com', names: ['.ROBLOSECURITY']}
+            ]
         },
         'hoyoverse': {
             items: [
@@ -18,7 +19,7 @@ var
         }
     },
     query = {active: true, currentWindow: true},
-    bgMessage;
+    message = {};
 
 browser.tabs.query(query, tabs => {
     if (tabs.length > 0) {
@@ -34,9 +35,14 @@ browser.tabs.query(query, tabs => {
             document.getElementById('popup-content').innerText = browser.i18n.getMessage(key + 'Permission');
             document.getElementById('permission').innerText = browser.i18n.getMessage('permission');
 
-            bgMessage = urls[key];
+            message = {
+                from: 'popup',
+                tabId: tabs[0].id,
+                platform: key,
+                ...urls[key],
+            };
             document.getElementById('permission').addEventListener('click', () => {
-                browser.runtime.sendMessage(bgMessage);
+                browser.runtime.sendMessage(message);
                 window.close();
             });
         }

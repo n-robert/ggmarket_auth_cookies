@@ -5,7 +5,7 @@
     "48": "icons/icon-48.png",
     "96": "icons/icon-96.png"
   },
-  "version": "0.1.9",
+  "version": "0.2.2",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "background": {
@@ -13,6 +13,29 @@
       "background.js"
     ]
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost/product/*/*",
+        "https://*.ggmarket.gg/product/*/*",
+        "http://176.57.220.167/product/*/*",
+        "*://*.steamcommunity.com/",
+        "*://*.steampowered.com/",
+        "*://*.hoyoverse.com/",
+        "*://*.hoyolab.com/",
+        "*://*.roblox.com/Login",
+        "*://*.roblox.com/home",
+        "*://*.lesta.ru/",
+        "*://*.tanki.su/",
+        "*://*.ea.com/",
+        "*://*.playvalorant.com/",
+        "*://*.vk.com/"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
   "browser_action": {
     "default_title": "__MSG_buttonDescription__",
     "default_icon": {
@@ -28,9 +51,11 @@
   "permissions": [
     "cookies",
     "activeTab",
-    "http://localhost/",
-    "http://176.57.220.167/",
+    "storage",
+    "scripting",
+    "*://localhost/",
     "https://*.ggmarket.gg/",
+    "http://176.57.220.167/",
     "*://*.steamcommunity.com/",
     "*://*.steampowered.com/",
     "*://*.hoyoverse.com/",
