@@ -11,7 +11,7 @@ var browser = browser || chrome,
                 {domain: '.roblox.com', names: ['.ROBLOSECURITY']}
             ]
         },
-        'hoyoverse': {
+        'hoyo': {
             items: [
                 {domain: '.hoyoverse.com', names: ['login_ticket']},
                 {domain: '.hoyolab.com', names: ['cookie_token_v2', 'ltoken_v2', 'account_id_v2']}

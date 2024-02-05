@@ -7,12 +7,12 @@
     "message": "GGMarket",
     "description": "Tooltip of the browser toolbar icon."
   },
-  "hoyoverseLogin": {
+  "hoyoLogin": {
     "message": "Please log in to hoyolab.com, then to account.hoyoverse.com, each site in a new tab.\nDon't close the tabs.\nGo back and press the GGMarket plugin icon.",
     "description": "Instructions to log in to account.hoyoverse.com"
   },
-  "hoyoversePermission": {
-    "message": "Do you give GGMarket permission to copy essential cookies from account.hoyoverse.com and hoyolab.com?\nIf necessary, you'll be redirected to hoyolab.com, then to account.hoyoverse.com. After successful login you'll be redirected back to ggmarket.gg.",
+  "hoyoPermission": {
+    "message": "Do you give GGMarket permission to copy essential cookies from account.hoyoverse.com and hoyolab.com?\nIf necessary, you'll be redirected to hoyolab.com, then to account.hoyoverse.com.\nAfter successful login you'll be redirected back to ggmarket.gg.",
     "description": "Permission to copy essential cookies from account.hoyoverse.com"
   },
   "steamLogin": {
@@ -20,7 +20,7 @@
     "description": "Instructions to log in to steamcommunity.com and store.steampowered.com"
   },
   "steamPermission": {
-    "message": "Do you give GGMarket permission to copy essential cookies from steamcommunity.com and store.steampowered.com?\nIf necessary, you'll be redirected to steamcommunity.com, then to store.steampowered.com. After successful login you'll be redirected back to ggmarket.gg.",
+    "message": "Do you give GGMarket permission to copy essential cookies from steamcommunity.com and store.steampowered.com?\nIf necessary, you'll be redirected to steamcommunity.com, then to store.steampowered.com.\nAfter successful login you'll be redirected back to ggmarket.gg.",
     "description": "Permission to copy essential cookies from steamcommunity.com and store.steampowered.com"
   },
   "robloxLogin": {
@@ -28,18 +28,22 @@
     "description": "Instructions to log in to roblox.com"
   },
   "robloxPermission": {
-    "message": "Do you give GGMarket permission to copy essential cookies from roblox.com?\nIf necessary, you'll be redirected to roblox.com. After successful login you'll be redirected back to ggmarket.gg.",
+    "message": "Do you give GGMarket permission to copy essential cookies from roblox.com?\nIf necessary, you'll be redirected to roblox.com.\nAfter successful login you'll be redirected back to ggmarket.gg.",
     "description": "Permission to copy essential cookies from roblox.com"
   },
   "permission": {
     "message": "Yes, I do",
     "description": "Give permission to get cookies"
   },
-  "noauth": {
-    "message": "Please, log in to game service first.",
-    "description": "Remind user of logging in to game service"
+  "cookieMissing": {
+    "message": "Unable to get all essential cookies.",
+    "description": "Inform user of cookie missing"
   },
-  "thankyou": {
+  "wrongName": {
+    "message": "Please, log in to account ",
+    "description": "Remind user of logging in to necessary game account"
+  },
+  "thankYou": {
     "message": "Thank you, cookies are successfully saved in your browser local storage.",
     "description": "Inform user about successful cookies saving"
   }

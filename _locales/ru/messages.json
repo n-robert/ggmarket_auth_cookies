@@ -7,12 +7,12 @@
     "message": "GGMarket",
     "description": "Подсказки для иконки кнопки"
   },
-  "hoyoverseLogin": {
+  "hoyoLogin": {
     "message": "Пожалуйста, залогиньтесь сначала на hoyolab.com, затем на account.hoyoverse.com, каждый раз на новой вкладке.\nНе закрывайте вкладки.\nВернитесь на эту страницу и нажмите на иконку плагина GGMarket.",
     "description": "Инструкции для входа на account.hoyoverse.com"
   },
-  "hoyoversePermission": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с account.hoyoverse.com и hoyolab.com?\nПри необходимости плагин перенаправит вас сначала на hoyolab.com, затем на account.hoyoverse.com. После успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
+  "hoyoPermission": {
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с account.hoyoverse.com и hoyolab.com?\nПри необходимости плагин перенаправит вас сначала на hoyolab.com, затем на account.hoyoverse.com.\nПосле успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
     "description": "Разрешение на копирование необходимые куки с account.hoyoverse.com"
   },
   "steamLogin": {
@@ -20,7 +20,7 @@
     "description": "Инструкции для входа на steamcommunity.com и store.steampowered.com"
   },
   "steamPermission": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с steamcommunity.com и store.steampowered.com?\nПри необходимости плагин перенаправит вас сначала на steamcommunity.com, затем на store.steampowered.com для аутентификации. После успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с steamcommunity.com и store.steampowered.com?\nПри необходимости плагин перенаправит вас сначала на steamcommunity.com, затем на store.steampowered.com для аутентификации.\nПосле успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
     "description": "Разрешение на копирование необходимые куки с steamcommunity.com and store.steampowered.com"
   },
   "robloxLogin": {
@@ -28,18 +28,22 @@
     "description": "Инструкции для входа на roblox.com"
   },
   "robloxPermission": {
-    "message": "Вы разрешаете GGMarket копировать необходимые куки с roblox.com?\nПри необходимости плагин перенаправит вас на roblox.com. После успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
+    "message": "Вы разрешаете GGMarket копировать необходимые куки с roblox.com?\nПри необходимости плагин перенаправит вас на roblox.com.\nПосле успешной аутентификации вас перенаправит обратно на ggmarket.gg.",
     "description": "Разрешение на копирование необходимые куки с roblox.com"
   },
   "permission": {
     "message": "Да, разрешаю",
     "description": "Дать разрешение на копирование куки"
   },
-  "noauth": {
-    "message": "Вам необходимо войти в аккаунт на игровом сервисе.",
+  "cookieMissing": {
+    "message": "Не удалось получить все необходимые куки.",
+    "description": "Сообщить об отсутствии куки"
+  },
+  "wrongName": {
+    "message": "Вам необходимо войти в аккаунт ",
     "description": "Напомнить юзера о необходимости войти в аккаунт на игровом сервисе"
   },
-  "thankyou": {
+  "thankYou": {
     "message": "Спасибо, куки сохранены в локальном хранении вашего браузера.",
     "description": "Сообщить юзеру об успешном сохранении куки"
   }

