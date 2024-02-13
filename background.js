@@ -2,23 +2,26 @@ var browser = browser || chrome,
     platforms = {
         'steam': {
             urls: {
-                login: [''],
+                login: [
+                    'https://steamcommunity.com/login/home/?goto=login',
+                    'https://store.steampowered.com/login',
+                ],
                 check: ''
             }
         },
         'roblox': {
             urls: {
                 login: ['https://www.roblox.com/Login'],
-                check: 'https://www.roblox.com/my/settings/json'
+                check: 'https://www.roblox.com/my/settings/json',
             }
         },
         'hoyo': {
             urls: {
                 login: [
                     'https://account.hoyoverse.com/#/login?cb_route=%2Faccount%2FaccountInfo',
-                    'https://www.hoyolab.com/achievementCenter'
+                    'https://www.hoyolab.com/achievementCenter',
                 ],
-                check: ''
+                check: 'https://webapi-os.account.hoyoverse.com/Api/login_by_cookie'
             }
         }
     };
@@ -72,20 +75,21 @@ async function fetchJson(url, method = 'GET', obj = {}) {
 }
 
 async function getCurrentUserName(platform) {
-    let result;
+    let userName;
     const data = await fetchJson(platforms[platform].urls.check);
 
     switch (platform) {
         case 'roblox':
-            result = data.Name;
+            userName = data.Name;
             break;
         case 'hoyo':
+            userName = data.data.account_info.email;
+            break;
         case 'steam':
         default:
-            break;
     }
 
-    return result;
+    return userName;
 }
 
 async function getUserName(tabId) {
@@ -99,6 +103,27 @@ async function getUserName(tabId) {
     return userName;
 }
 
+async function checkUserName(platform, tabId) {
+    const currentUserName = await getCurrentUserName(platform);
+    let userName = await getUserName(tabId);
+
+    switch (platform) {
+        case 'hoyo':
+            let tmpName = userName.split(''), end = tmpName.indexOf('@');
+            tmpName = tmpName.map(
+                (v, i) =>
+                    (1 < i && i < end - 2) ? '*' : v
+            );
+            userName = tmpName.join('');
+            break;
+        case 'roblox':
+        case 'steam':
+        default:
+    }
+
+    return currentUserName === userName;
+}
+
 async function saveCookies(cookies, items) {
     const value = cookies.map(
             formatCookie(items)
@@ -110,10 +135,10 @@ async function saveCookies(cookies, items) {
     let i = storageObj.urlIndex, url = platforms[storageObj.platform].urls.login[i];
 
     if (url) {
+        browser.storage.session.set({urlIndex: i + 1});
         browser.tabs.create({
             url: url
         });
-        browser.storage.session.set({urlIndex: i + 1});
     } else {
         browser.tabs.update(storageObj.tabId, {active: true});
 
@@ -124,11 +149,9 @@ async function saveCookies(cookies, items) {
                 args: [browser.i18n.getMessage('cookieMissing')]
             });
         } else {
-            const
-                currentUserName = await getCurrentUserName(storageObj.platform),
-                userName = await getUserName(storageObj.tabId);
+            const userName = await getUserName(storageObj.tabId);
 
-            if (currentUserName !== userName) {
+            if (!await checkUserName(storageObj.platform, storageObj.tabId)) {
                 browser.scripting.executeScript({
                     target: {tabId: storageObj.tabId},
                     func: raiseMessage,

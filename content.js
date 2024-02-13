@@ -3,18 +3,18 @@ var browser = browser || chrome,
         'steam': {
             items: [
                 {domain: 'steamcommunity.com', names: ['steamLoginSecure']},
-                {domain: 'store.steampowered.com', names: ['steamLoginSecure']}
+                {domain: 'store.steampowered.com', names: ['steamLoginSecure']},
             ]
         },
         'roblox': {
             items: [
-                {domain: '.roblox.com', names: ['.ROBLOSECURITY']}
+                {domain: '.roblox.com', names: ['.ROBLOSECURITY']},
             ]
         },
         'hoyo': {
             items: [
                 {domain: '.hoyoverse.com', names: ['login_ticket']},
-                {domain: '.hoyolab.com', names: ['cookie_token_v2', 'ltoken_v2', 'account_id_v2']}
+                {domain: '.hoyolab.com', names: ['cookie_token_v2', 'ltoken_v2', 'account_id_v2']},
             ]
         }
     };
@@ -59,16 +59,28 @@ const
 
                         break;
                     case 'hoyo':
-                        if (window.location.href.indexOf('https://www.hoyolab.com/achievementCenter?target_uid=') > -1) {
+                        if (window.location.href === 'https://account.hoyoverse.com/#/account/accountInfo') {
                             found = true;
                         }
 
-                        if (window.location.href === 'https://account.hoyoverse.com/#/account/accountInfo') {
+                        if (window.location.href.indexOf('https://www.hoyolab.com/achievementCenter?target_uid=') > -1) {
                             found = true;
                         }
 
                         break;
                     case 'steam':
+                        if (
+                            window.location.href.indexOf('https://steamcommunity.com/profiles') > -1
+                            || window.location.href.indexOf('https://steamcommunity.com/id') > -1
+                        ) {
+                            found = true;
+                        }
+
+                        if (window.location.href === 'https://store.steampowered.com/') {
+                            found = true;
+                        }
+
+                        break;
                     default:
                         break;
                 }
