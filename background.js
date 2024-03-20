@@ -96,7 +96,7 @@ async function getCurrentUserName(platform) {
         case 'steam':
             data = await fetchData(url);
             const
-                regex = /<h2 class="pageheader youraccount_pageheader">(.+)'s account<\/h2>/g,
+                regex = /<span class="account_name">(.+)<\/span>/gi,
                 result = regex.exec(data);
             userName = result[1];
             break;
