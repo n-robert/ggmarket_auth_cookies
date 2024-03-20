@@ -19,6 +19,15 @@ var browser = browser || chrome,
         }
     };
 
+// var action = false;
+// function handleRequest(message, sender) {
+//     if (message.action) {
+//         action = message.action;
+//     }
+// }
+//
+// browser.runtime.onMessage.addListener(handleRequest);
+
 // const checkButton = document.evaluate(
 //     "//button[contains(text(), 'Проверить аккаунт')]",
 //     document.body,
@@ -98,4 +107,4 @@ const
     }),
     config = {subtree: true, childList: true};
 
-observer.observe(document, config);
+observer.observe(document, config); // if (action) observer.observe(document, config);

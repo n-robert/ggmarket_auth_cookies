@@ -6,7 +6,7 @@ var browser = browser || chrome,
                     'https://steamcommunity.com/login/home/?goto=login',
                     'https://store.steampowered.com/login',
                 ],
-                check: ''
+                check: 'https://store.steampowered.com/account/?l=english'
             }
         },
         'roblox': {
@@ -59,34 +59,47 @@ function raiseMessage(msg) {
     alert(msg);
 }
 
-async function fetchJson(url, method = 'GET', obj = {}) {
-    let init = {
-        method: method,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    };
+async function fetchData(url, type = 'text', method = 'GET', obj = {}) {
+    let init = {method: method}, result;
 
     if (method === 'POST') {
         init.body = JSON.stringify(obj);
     }
 
-    return await (await fetch(url, init)).json();
+    switch (type) {
+        case 'text':
+            init.headers = {'Content-Type': 'text/html'};
+            result = await (await fetch(url, init)).text();
+            break;
+        case 'json':
+            init.headers = {'Content-Type': 'application/json'};
+            result = await (await fetch(url, init)).json();
+            break;
+    }
+
+    return result;
 }
 
 async function getCurrentUserName(platform) {
-    let userName;
-    const data = await fetchJson(platforms[platform].urls.check);
+    let userName, data;
+    const url = platforms[platform].urls.check;
 
     switch (platform) {
         case 'roblox':
+            data = await fetchData(url, 'json');
             userName = data.Name;
             break;
         case 'hoyo':
+            data = await fetchData(url, 'json');
             userName = data.data.account_info.email;
             break;
         case 'steam':
-        default:
+            data = await fetchData(url);
+            const
+                regex = /<h2 class="pageheader youraccount_pageheader">(.+)'s account<\/h2>/g,
+                result = regex.exec(data);
+            userName = result[1];
+            break;
     }
 
     return userName;
