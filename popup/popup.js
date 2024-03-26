@@ -20,7 +20,7 @@ var browser = browser || chrome,
                 {domain: '.hoyolab.com', names: ['cookie_token_v2', 'ltoken_v2', 'account_id_v2']},
             ]
         },
-        'genshin-impact': {
+        'gi': {
             platform: 'hoyo',
             items: [
                 {domain: '.hoyoverse.com', names: ['login_ticket', 'cookie_token_v2', 'ltoken_v2', 'account_id_v2']},
