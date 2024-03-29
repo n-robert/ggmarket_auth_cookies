@@ -80,18 +80,20 @@ async function fetchData(url, type = 'text', method = 'GET', obj = {}) {
     return result;
 }
 
-async function getCurrentUserName(platform) {
-    let userName, data;
+async function getCurrentUser(platform) {
+    let userName, userId, data;
     const url = platforms[platform].urls.check;
 
     switch (platform) {
         case 'roblox':
             data = await fetchData(url, 'json');
             userName = data.Name;
+            userId = null;
             break;
         case 'hoyo':
             data = await fetchData(url, 'json');
-            userName = data.data.account_info.email;
+            userName = data.data.account_info.account_name || data.data.account_info.email;
+            userId = parseInt(data.data.account_info.account_id);
             break;
         case 'steam':
             data = await fetchData(url);
@@ -99,10 +101,11 @@ async function getCurrentUserName(platform) {
                 regex = /<span class="account_name">(.+)<\/span>/gi,
                 result = regex.exec(data);
             userName = result[1];
+            userId = null;
             break;
     }
 
-    return userName;
+    return {name: userName, id: userId};
 }
 
 async function getUserName(tabId) {
@@ -117,24 +120,37 @@ async function getUserName(tabId) {
 }
 
 async function checkUserName(platform, tabId) {
-    const currentUserName = await getCurrentUserName(platform);
+    const currentUser = await getCurrentUser(platform);
     let userName = await getUserName(tabId);
 
     switch (platform) {
         case 'hoyo':
-            let tmpName = userName.split(''), end = tmpName.indexOf('@');
+            // Check name length
+            if (currentUser.name.length !== userName.length) return false;
+
+            // Check name
+            let tmpName = userName.split('');
             tmpName = tmpName.map(
                 (v, i) =>
-                    (1 < i && i < end - 2) ? '*' : v
+                    (currentUser.name[i] === '*') ? '*' : v
             );
             userName = tmpName.join('');
-            break;
+
+            if (currentUser.name !== userName) return false;
+
+            // Check ID
+            const
+                url = 'https://bbs-api-os.hoyolab.com/community/painter/wapi/user/full',
+                data = await fetchData(url, 'json');
+
+            if (parseInt(data.data.user_info.uid) !== currentUser.id) return false;
+
+            return  true;
         case 'roblox':
         case 'steam':
         default:
+            return currentUser.name === userName;
     }
-
-    return currentUserName === userName;
 }
 
 async function saveCookies(cookies, items) {
